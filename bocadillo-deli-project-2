@@ -20,7 +20,7 @@
     "image": "https://bocadillo.pizza/logo.png",
     "description": "Bocadillo Deli Bodega — Detroit-style pizza, Chicago-style hot dogs, gourmet hoagies and wraps made fresh daily in Canton, Ohio.",
     "url": "https://bocadillo.pizza",
-    "telephone": "",
+    "telephone": "234-214-0053",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "309 Cleveland Ave NW",
