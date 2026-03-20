@@ -12,6 +12,14 @@
   <meta property="og:url" content="https://bocadillo.pizza" />
   <meta property="og:title" content="Bocadillo Deli Bodega – Canton, Ohio" />
   <meta property="og:description" content="Detroit-style pizza, Chicago hot dogs, gourmet hoagies &amp; wraps — made fresh daily in Canton, Ohio. Dine in or takeout." />
+  <!-- logo.png is used for iMessage / social link previews.
+       Swap for a 1200×630 food photo later to maximize preview impact. -->
+  <meta property="og:image" content="https://bocadillo.pizza/logo.png" />
+  <meta property="og:image:alt" content="Bocadillo Deli Bodega" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bocadillo Deli Bodega – Canton, Ohio" />
+  <meta name="twitter:description" content="Detroit-style pizza, Chicago hot dogs, gourmet hoagies &amp; wraps — made fresh daily in Canton, Ohio." />
+  <meta name="twitter:image" content="https://bocadillo.pizza/logo.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,7 +28,7 @@
     "image": "https://bocadillo.pizza/logo.png",
     "description": "Bocadillo Deli Bodega — Detroit-style pizza, Chicago-style hot dogs, gourmet hoagies and wraps made fresh daily in Canton, Ohio.",
     "url": "https://bocadillo.pizza",
-    "telephone": "",
+    "telephone": "+12342140053",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "309 Cleveland Ave NW",
@@ -47,6 +55,12 @@
         "dayOfWeek": "Saturday",
         "opens": "16:00",
         "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "00:00",
+        "closes": "00:00"
       }
     ],
     "servesCuisine": ["Pizza","Hot Dogs","Sandwiches","American"],
@@ -156,6 +170,15 @@
       font-size: 0.82rem; color: var(--muted);
       letter-spacing: 0.12em; text-transform: uppercase;
       font-weight: 500; margin-bottom: 2.4rem;
+    }
+    .hero-h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 400;
+      margin: 0 auto 0.6rem;
+      position: relative; z-index: 1;
     }
     .hero-info a { color: var(--blue); text-decoration: none; font-weight: 600; }
     .phone-wrap {
@@ -602,6 +625,7 @@
     <div class="phone-wrap">
       <a href="tel:2342140053" class="phone-number">234-214-0053</a>
     </div>
+    <h1 class="hero-h1">Detroit-Style Pizza &middot; Chicago Hot Dogs &middot; Hoagies &middot; Canton, Ohio</h1>
     <div class="hero-rule"></div>
     <div class="hero-info">
       309 Cleveland Ave NW, Canton, Ohio &nbsp;&bull;&nbsp;
@@ -898,8 +922,13 @@
       </div>
 
       <div class="reviews-cta">
-        <a href="https://www.google.com/maps/search/Bocadillo+Deli+Bodega+Canton+Ohio" target="_blank" rel="noopener">&#9733; Leave a Google Review</a>
-        <a href="https://www.google.com/maps/search/Bocadillo+Deli+Bodega+Canton+Ohio" target="_blank" rel="noopener" class="outline">See All Reviews</a>
+        <!-- href values are upgraded to direct Place ID links by the JS below once PLACE_ID is set -->
+        <a id="write-review-btn"
+           href="https://www.google.com/maps/search/Bocadillo+Deli+Bodega+Canton+Ohio"
+           target="_blank" rel="noopener">&#9733; Leave a Google Review</a>
+        <a id="see-all-reviews-btn"
+           href="https://www.google.com/maps/search/Bocadillo+Deli+Bodega+Canton+Ohio"
+           target="_blank" rel="noopener" class="outline">See All Reviews</a>
       </div>
 
     </div>
@@ -1089,6 +1118,17 @@
     }
 
     loadGoogleReviews();
+
+    // Auto-upgrade review CTA buttons to direct Place ID links once PLACE_ID is configured.
+    // To activate: replace 'YOUR_PLACE_ID' above with your actual Google Place ID.
+    // Find your Place ID at: https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
+    (function upgradeReviewLinks() {
+      if (!PLACE_ID || PLACE_ID === 'YOUR_PLACE_ID') return;
+      const writeBtn = document.getElementById('write-review-btn');
+      const seeAllBtn = document.getElementById('see-all-reviews-btn');
+      if (writeBtn) writeBtn.href = 'https://search.google.com/local/writereview?placeid=' + PLACE_ID;
+      if (seeAllBtn) seeAllBtn.href = 'https://www.google.com/maps/place/?q=place_id:' + PLACE_ID;
+    })();
   </script>
 
 </body>
