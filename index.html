@@ -95,34 +95,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
 
-    /* ANNOUNCEMENT BANNER */
-    .announcement-banner {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 101;
-      background: var(--blue);
-      border-bottom: 2px solid var(--blue-dk);
-      text-align: center;
-      padding: 0.5rem 5%;
-      font-size: 0.92rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: #fff;
-    }
-    .announcement-banner span { color: #fff; font-weight: 800; }
-
-    /* PHONE BANNER */
-    .phone-banner {
-      display: inline-block;
-      background: var(--blue);
-      color: #fff;
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      padding: 0.35rem 1.6rem;
-      border-radius: 6px;
-      margin-bottom: 1.4rem;
-      position: relative; z-index: 1;
-    }
-
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -182,10 +154,6 @@
       box-shadow: 0 6px 20px rgba(93,118,173,0.55) !important;
       color: #ffffff !important;
     }
-
-    /* Banner-active overrides */
-    body.banners-active nav { top: 36px; }
-    body.banners-active .hero { padding: 9rem 5% 3.5rem; }
 
     /* HERO */
     .hero {
@@ -650,11 +618,6 @@
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT BANNER -->
-  <div id="announcement-banner" class="announcement-banner">
-    Due to high demand — <span>walk in &amp; dine in only tonight.</span> Thank you for your continued support.
-  </div>
-
   <!-- =====================================================================
        OPEN / CLOSED STATUS CARD
        =====================================================================
@@ -773,7 +736,6 @@
     <div class="phone-wrap">
       <a href="tel:2342140053" class="phone-number">234-214-0053</a>
     </div>
-    <div id="phone-banner" class="phone-banner">Stop on down tonight!</div>
     <h1 class="hero-h1">Detroit-Style Pizza &middot; New York Deli &middot; Specialty Hot Dogs &middot; Downtown Canton, Ohio</h1>
     <div class="hero-rule"></div>
     <div class="hero-info">
@@ -1303,41 +1265,6 @@
     })();
   </script>
 
-  <!-- ── BANNER AUTO-HIDE AT 8 PM ─────────────────────────────────────── -->
-  <script>
-  (function () {
-    var CLOSE_HOUR = 20; // 8:00 PM local time
-
-    function manageBanners() {
-      var now        = new Date();
-      var isBeforeClose = now.getHours() < CLOSE_HOUR;
-
-      var topBanner  = document.getElementById('announcement-banner');
-      var phoneBanner= document.getElementById('phone-banner');
-      var phoneWrap  = document.querySelector('.phone-wrap');
-
-      if (isBeforeClose) {
-        document.body.classList.add('banners-active');
-        if (topBanner)   topBanner.style.display   = '';
-        if (phoneBanner) phoneBanner.style.display = '';
-        if (phoneWrap)   phoneWrap.style.display   = 'none';
-
-        // Schedule removal at exactly 8 PM tonight
-        var closeTime = new Date();
-        closeTime.setHours(CLOSE_HOUR, 0, 0, 0);
-        var msLeft = closeTime - now;
-        if (msLeft > 0) setTimeout(manageBanners, msLeft);
-      } else {
-        document.body.classList.remove('banners-active');
-        if (topBanner)   topBanner.style.display   = 'none';
-        if (phoneBanner) phoneBanner.style.display = 'none';
-        if (phoneWrap)   phoneWrap.style.display   = '';
-      }
-    }
-
-    manageBanners();
-  })();
-  </script>
 
 </body>
 </html>
