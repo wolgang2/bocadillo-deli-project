@@ -20,9 +20,9 @@
   <meta property="og:type" content="restaurant" />
   <meta property="og:url" content="https://bocadillo.pizza" />
   <meta property="og:title" content="Bocadillo Deli Pizzeria – Canton, Ohio" />
-  
   <meta property="og:description" content="Detroit-style pizza, New York deli subs, specialty hot dogs — made to order in downtown Canton, Ohio. Dine in or takeout." />
-    <meta name="google-site-verification" content="cCwVBzLxxg1w3mzDMJ1XeP23oe8c8x6WNOqU7b8lAp4" to later to maximize preview impact. -->
+  <!-- logo.png is used for iMessage / social link previews.
+       Swap for a 1200×630 food photo later to maximize preview impact. -->
   <meta property="og:image" content="https://bocadillo.pizza/logo.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -763,6 +763,10 @@
         <div class="cat-card-label">Hoagies &amp; Wraps</div>
         <div class="cat-card-price">$15</div>
       </div>
+      <div class="cat-card" onclick="document.getElementById('cat-cinnabites').scrollIntoView({behavior:'smooth',block:'start'})">
+        <div class="cat-card-label">CinnaBites</div>
+        <div class="cat-card-price">$9</div>
+      </div>
     </div>
 
     <!-- GOOGLE REVIEW CARD -->
@@ -904,10 +908,22 @@
           <div class="menu-item"><div class="menu-item-name">Roast Beef</div><div class="menu-item-desc">Roast beef, cheddar, lettuce, red onion, garlic horseradish aioli, evoo</div></div>
           <div class="menu-item"><div class="menu-item-name">Turkey Pesto</div><div class="menu-item-desc">Turkey, mozz, lettuce, onion, evoo, vinaigrette, mayo, pesto</div></div>
           <div class="menu-item"><div class="menu-item-name">Italian Beef</div><div class="menu-item-desc">Braised roast beef, spicy giardiniera, mozzarella</div></div>
-          <div class="menu-item"><div class="menu-item-name">Chopped Cheese</div><div class="menu-item-desc">Ground beef, cheddar cheese, lettuce, tomato, peppers, vinaigrette, spicy mayo</div></div>
           <div class="menu-item"><div class="menu-item-name">Chopped Italian</div><div class="menu-item-desc">Pepperoni, salami, ham, mortadella, fresh mozz, lettuce, tomato, peppers, red onion, mayo, evoo, vinaigrette, balsamic glaze</div></div>
           <div class="menu-item"><div class="menu-item-name">Corned Beef</div><div class="menu-item-desc">Corned beef, swiss, cheddar, mustard, mayo, rye bread</div></div>
-          <div class="menu-item"><div class="menu-item-name">Pastrami</div><div class="menu-item-desc">Pastrami, sauerkraut, swiss, cheddar, mustard, mayo, rye bread</div></div>
+        </div>
+      </div>
+
+      <!-- CinnaBites -->
+      <div class="menu-category" id="cat-cinnabites">
+        <div class="menu-category-header">
+          <div class="menu-category-name">CinnaBites</div>
+          <div class="menu-category-price">$9</div>
+          <div class="menu-category-line"></div>
+        </div>
+        <div class="menu-items-grid">
+          <div class="menu-item"><div class="menu-item-name">Regular</div><div class="menu-item-desc">House dough, cinnamon-sugar, cream cheese icing</div></div>
+          <div class="menu-item"><div class="menu-item-name">Strawberry Shortcake</div><div class="menu-item-desc">House dough, cinnamon-sugar, cream cheese icing, strawberry filling, whipped cream</div></div>
+          <div class="menu-item"><div class="menu-item-name">Caramel Apple</div><div class="menu-item-desc">House dough, cinnamon-sugar, cream cheese icing, apple filling, whipped cream</div></div>
         </div>
       </div>
 
