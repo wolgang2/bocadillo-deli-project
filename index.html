@@ -1282,6 +1282,46 @@
     })();
   </script>
 
+  <!-- STICKY ORDER BUTTON -->
+  <style>
+    .sticky-order {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      background: #5d76ad;
+      color: #ffffff;
+      padding: 0.85rem 2.2rem;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(93,118,173,0.55);
+      animation: jiggle 2.5s ease-in-out infinite;
+      transition: background 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+      border: 2px solid transparent;
+    }
+    .sticky-order:hover {
+      background: #4a6099;
+      box-shadow: 0 8px 28px rgba(93,118,173,0.65);
+      color: #ffffff;
+      animation: none;
+      transform: translateX(-50%) translateY(-2px);
+    }
+    /* Hide on very small screens in landscape to avoid cluttering */
+    @media (max-height: 400px) {
+      .sticky-order { display: none; }
+    }
+  </style>
+  <a class="sticky-order"
+     href="https://order.toasttab.com/online/ali-deli-convenience-309-cleveland-ave-nw"
+     target="_blank"
+     rel="noopener">Order Now</a>
 
 </body>
 </html>
