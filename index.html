@@ -922,10 +922,10 @@
         <h2 class="section-title">Google Reviews</h2>
         <p>Real guests. Real food. Real love for Bocadillo.</p>
         <div class="reviews-rating-bar">
-          <div class="reviews-rating-num">4.6</div>
+          <div class="reviews-rating-num">4.7</div>
           <div>
             <div class="reviews-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="reviews-rating-label">Google Rating · 60 Reviews</div>
+            <div class="reviews-rating-label">Google Rating · 101 Reviews</div>
           </div>
         </div>
       </div>
@@ -947,6 +947,19 @@
 
       <!-- TOP REVIEW TILES -->
       <div class="review-grid">
+
+        <div class="review-tile">
+          <div class="review-tile-header">
+            <div class="review-tile-avatar">T</div>
+            <div>
+              <div class="review-tile-name">Todd Knisley</div>
+              <div class="review-tile-date">July 2026</div>
+            </div>
+          </div>
+          <div class="review-tile-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-tile-text">&ldquo;Fantastic pizza, subs, and hot dogs. This is a small downtown deli. There are no traditional deli cases, but the food is great.&rdquo;</p>
+          <div class="review-tile-source"><span style="font-size:0.85rem;font-weight:900;background:linear-gradient(135deg,#4285F4 25%,#EA4335 50%,#FBBC05 75%,#34A853 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">G</span> Google Review</div>
+        </div>
 
         <div class="review-tile">
           <div class="review-tile-header">
@@ -1111,6 +1124,12 @@
     const API_KEY  = 'YOUR_API_KEY';
 
     const fallbackReviews = [
+      {
+        text: "Fantastic pizza, subs, and hot dogs. This is a small downtown deli. There are no traditional deli cases, but the food is great.",
+        name: "Todd Knisley",
+        meta: "Google Review · July 2026",
+        initial: "T"
+      },
       {
         text: "I've been clamoring to try this place since it opened and I finally took the opportunity today. And let me just say, wow. This place is top notch. The pizza, the sandwich — it all was so insanely good. I've never had anything quite like it in Canton.",
         name: "Fernando",
