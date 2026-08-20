@@ -167,6 +167,31 @@
       box-shadow: 0 6px 20px rgba(93,118,173,0.55) !important;
       color: #ffffff !important;
     }
+    .nav-order-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-order-dd {
+      background: #ff3008 !important;
+      color: #ffffff !important;
+      padding: 0.55rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 800 !important;
+      letter-spacing: 0.1em !important;
+      font-size: 0.82rem !important;
+      box-shadow: 0 3px 12px rgba(255,48,8,0.35);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      display: inline-block;
+    }
+    .nav-order-dd:hover {
+      background: #d92a06 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(255,48,8,0.5) !important;
+      color: #ffffff !important;
+    }
 
     /* HERO */
     .hero {
@@ -744,7 +769,10 @@
       <li><a href="#about">About</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#visit">Visit</a></li>
       <li><a href="https://www.instagram.com/bocadillodeli" target="_blank" class="nav-cta">Instagram</a></li>
     </ul>
-    <button class="nav-order" onclick="window.open('https://order.toasttab.com/online/ali-deli-convenience-309-cleveland-ave-nw','_blank')">Order Now</button>
+    <div class="nav-order-group">
+      <button class="nav-order" onclick="window.open('https://order.toasttab.com/online/ali-deli-convenience-309-cleveland-ave-nw','_blank')">Order Now</button>
+      <a class="nav-order-dd" href="https://www.doordash.com/store/bocadillo-deli-pizzeria-canton-51364851/117635150/?event_type=autocomplete&amp;pickup=false" target="_blank" rel="noopener">DoorDash</a>
+    </div>
   </nav>
 
   <!-- HERO -->
